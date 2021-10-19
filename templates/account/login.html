@@ -1,0 +1,14 @@
+<h2> Log in  </h2>
+    <form method="post">
+        {% csrf_token %}
+        {{ form }}
+        <button type="submit" class='btn mt-5'> log in </button>
+    </form>
+
+    <div 
+    hx-get="{% url 'account_signup' %}"
+    hx-trigger="click"
+    hx-target="#user"
+    >
+    <span class="hyperlink-underline text-primary"> Need to signup?</span>
+  </div>

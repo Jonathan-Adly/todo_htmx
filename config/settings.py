@@ -40,8 +40,10 @@ INSTALLED_APPS = [
     "django.contrib.sites",
     "allauth",
     "allauth.account",
-    "accounts",
     "allauth.socialaccount",
+    "accounts",
+    # new
+    "todo",
 ]
 
 MIDDLEWARE = [
