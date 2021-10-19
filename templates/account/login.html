@@ -1,14 +1,25 @@
+{% extends "base.html" %}
+
+{% block content %}
+    
+<div class="content mt-20 text-center">
 <h2> Log in  </h2>
-    <form method="post">
+    <form 
+    hx-post="{% url 'account_login' %}"
+    hx-target= "#authentication">
         {% csrf_token %}
         {{ form }}
         <button type="submit" class='btn mt-5'> log in </button>
     </form>
-
-    <div 
-    hx-get="{% url 'account_signup' %}"
+    <span 
+    hx-get="{% url 'account_signup' %}" 
+    hx-target="#authentication"
     hx-trigger="click"
-    hx-target="#user"
+    class= "hyperlink-underline"
     >
-    <span class="hyperlink-underline text-primary"> Need to signup?</span>
-  </div>
+    Need to Signup?
+    </span>
+</div>
+
+
+  {% endblock %}

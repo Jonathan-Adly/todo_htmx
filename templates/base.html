@@ -14,8 +14,8 @@
 
 <style>
 .hyperlink-underline {
-    cursor: pointer;
-  }
+  cursor: pointer;
+}
 </style>
 </head>
 
@@ -23,8 +23,8 @@
 
   <div class="page-wrapper">
     <div class="content-wrapper">
-    {% include 'components/landing_page.html' %}
-    {% include 'account/signup.html' %}
+    
+{% block content %} {% endblock content %} <!-- new -->
         
     </div>
   </div>

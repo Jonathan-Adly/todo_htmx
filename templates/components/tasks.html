@@ -1,0 +1,9 @@
+<ul> 
+
+{% for task in tasks %}
+<li> {{task}} </li>
+{% empty %}
+<li> No items on your list yet </li>
+{% endfor %}
+
+</ul>
