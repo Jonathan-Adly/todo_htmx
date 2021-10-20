@@ -8,7 +8,7 @@
     hx-post="{% url 'account_signup' %}"
     hx-target= "#authentication"
     >
-        {% csrf_token %}
+        <!-- no longer needed {% csrf_token %} -->
         {{ form }}
         <button type="submit" 
         class='btn mt-5'> Sign Up </button>
