@@ -16,10 +16,12 @@
       {% if user.is_authenticated %}
       <li 
       class="nav-item"
-      hx-get="{% url 'account_logout' %}"
-      hx-target= "#authentication"
+      hx-post="{% url 'account_logout' %}"
       hx-trigger= "click"
+      hx-confirm="Are you sure you wish to log out?"
+      hx-target= "#content"
       >
+      
          <span class="nav-link"> Log out </span>
       </li>
       {% else %}
