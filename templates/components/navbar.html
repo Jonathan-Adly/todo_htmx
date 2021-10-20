@@ -66,9 +66,10 @@ aria-labelledby="navbar-dropdown-toggle-btn">
      {% if user.is_authenticated %}
      <span 
      class="dropdown-item" 
-     hx-get="{% url 'account_logout' %}"
-     hx-target= "#authentication"
+     hx-post="{% url 'account_logout' %}"
      hx-trigger= "click"
+     hx-confirm="Are you sure you wish to log out?"
+     hx-target= "#content"
      >
      Log out 
      </span>

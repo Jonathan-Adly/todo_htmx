@@ -143,7 +143,7 @@ AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",  # this how admins will log in to the admin site
     "allauth.account.auth_backends.AuthenticationBackend",  # this how users log in
 ]
-LOGIN_REDIRECT_URL = "home"  # change to desired url name
+LOGIN_REDIRECT_URL = "auth"  # change to desired url name
 LOGOUT_REDIRECT_URL = "home"  # change to desired url name
 ACCOUNT_SESSION_REMEMBER = True  # remember user via sessions
 ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False  # preferred UX

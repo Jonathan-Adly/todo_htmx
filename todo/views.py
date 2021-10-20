@@ -53,3 +53,7 @@ def home(request):
                     "errors": errors,
                 },  # the posted form, since it didn't save
             )
+
+
+def auth(request):
+    return render(request, "components/auth.html")

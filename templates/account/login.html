@@ -6,7 +6,7 @@
 <h2> Log in  </h2>
     <form 
     hx-post="{% url 'account_login' %}"
-    hx-target= "#content">
+    hx-target= "#authentication">
         {% csrf_token %}
         {{ form }}
         <button type="submit" class='btn mt-5'> log in </button>
