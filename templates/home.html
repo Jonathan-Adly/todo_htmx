@@ -2,8 +2,10 @@
 
 {% block content %}
     {% include 'components/navbar.html' %}
-
     {% include 'components/landing_page.html' %}
-    
+        
+    {% if user.is_authenticated %}
+        {% include 'components/tasks.html' %}
+    {% endif %}
     <div id="authentication"> </div>
 {% endblock %}

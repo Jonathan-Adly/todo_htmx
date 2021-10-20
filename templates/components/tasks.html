@@ -1,9 +1,20 @@
+<div class="card w-600 mw-full mx-auto" id="tasks">
+<h3 class="card-title"> Your tasks </h3>
 <ul> 
-
 {% for task in tasks %}
 <li> {{task}} </li>
 {% empty %}
 <li> No items on your list yet </li>
 {% endfor %}
+    <form 
+    hx-post="{% url 'home' %}"
+    hx-swab= "outerHTML"
+    hx-target = "#tasks"
+    >
+        {{ form }}
+        <button type="submit"> Add </button>
+    </form>
+
 
 </ul>
+</div>
