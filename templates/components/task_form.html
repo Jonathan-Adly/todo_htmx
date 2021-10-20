@@ -1,0 +1,8 @@
+   <form 
+    hx-post="{% url 'home' %}"
+    hx-target="#tasks" 
+    hx-swap="outerHTML"
+    >
+        {{ form }}
+        <button type="submit"> Add </button>
+    </form>

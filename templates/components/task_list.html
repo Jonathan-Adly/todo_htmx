@@ -1,0 +1,43 @@
+<div
+id="tasks"  
+hx-swap= "outerHTML"
+hx-target = "#tasks"
+>
+<h3 class="card-title"> Your tasks </h3>
+<ul> 
+{% for task in tasks %}
+{% if task.done %} 
+    <div class="custom-checkbox">
+        <input 
+        type="checkbox" 
+        id="checkbox-done-{{task.id}}" 
+        value="" 
+        checked="checked" 
+        hx-post= "{% url 'complete' task.id %}"
+        hx-trigger= "click"
+        >
+        <label for="checkbox-done-{{task.id}}"><del> {{ task.name }} </del> </label>
+        <button class="close" hx-post= "{% url 'delete' task.id %}"> &times; </button>
+    </div>
+{% else %} 
+    <div class="custom-checkbox">
+        <input 
+        type="checkbox" 
+        id="checkbox-notdone-{{task.id}}" 
+        value="" 
+        hx-post= "{% url 'complete' task.id %}"
+        hx-trigger= "click"
+        >
+        <label for="checkbox-notdone-{{task.id}}">{{ task.name }}  </label>
+         <button class="close" hx-post= "{% url 'delete' task.id %}"> &times; </button>
+      
+    </div>
+{% endif %} 
+
+{% empty %}
+<li> No items on your list yet </li>
+{% endfor %}
+</ul>
+
+{% if errors %} {{errors}} {% endif %}
+</div>
