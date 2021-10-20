@@ -17,7 +17,7 @@ hx-target = "#tasks"
         hx-trigger= "click"
         >
         <label for="checkbox-done-{{task.id}}"><del> {{ task.name }} </del> </label>
-         
+        <button class="close" hx-post= "{% url 'delete' task.id %}"> &times; </button>
     </div>
 {% else %} 
     <div class="custom-checkbox">
@@ -29,6 +29,7 @@ hx-target = "#tasks"
         hx-trigger= "click"
         >
         <label for="checkbox-notdone-{{task.id}}">{{ task.name }}  </label>
+         <button class="close" hx-post= "{% url 'delete' task.id %}"> &times; </button>
       
     </div>
 {% endif %} 

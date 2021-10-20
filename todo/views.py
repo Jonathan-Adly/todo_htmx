@@ -79,3 +79,18 @@ def complete(request, task_id):
             "errors": None,
         },
     )
+
+
+@require_POST
+def delete(request, task_id):
+    Task.objects.filter(id=task_id).delete()
+    tasks = Task.objects.filter(user=request.user)
+    return render(
+        request,
+        "components/tasks.html",
+        {
+            "form": TaskForm(),
+            "tasks": tasks,
+            "errors": None,
+        },
+    )
